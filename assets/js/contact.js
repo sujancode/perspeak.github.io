@@ -18,7 +18,7 @@ form.addEventListener('submit',(e)=>{
         "service":service,
         "course":course           
 }
-fetch("http://localhost:3000", {
+fetch("https://whlqmjzzzk.execute-api.us-east-1.amazonaws.com/staging", {
     method: "POST",
     body: JSON.stringify(obj),
     headers: {
