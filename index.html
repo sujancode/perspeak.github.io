@@ -134,6 +134,8 @@
               class="get-a-quote"
               id="contact-form"
               method="post"
+              action="http://localhost:3000"
+
             >
               <div>
                 <h6>Talk To Our Representative</h6>
@@ -154,7 +156,7 @@
                 </svg>
                 <input
                   type="text"
-                  name="Full Name"
+                  name="fullname"
                   placeholder="Full Name"
                   required=""
                 />
@@ -178,7 +180,7 @@
                 </svg>
                 <input
                   type="text"
-                  name="Email Address"
+                  name="email"
                   placeholder="Email Address"
                   required=""
                 />
@@ -205,7 +207,7 @@
                 </svg>
                 <input
                   type="text"
-                  name="Phone No"
+                  name="phone"
                   placeholder="Phone No"
                   required=""
                 />
@@ -216,7 +218,7 @@
                   <input
                     type="radio"
                     id="Courses"
-                    name="Courses"
+                    name="selection"
                     value="Courses"
                   />
                   <label for="Courses">Courses</label>
@@ -224,8 +226,8 @@
                 <div class="radio-button">
                   <input
                     type="radio"
-                    id="Interview-Prep"
-                    name="Interview"
+                    id="Interview"
+                    name="selection"
                     value="Interview"
                   />
                   <label for="Interview">Interview-Prep</label><br />
@@ -233,14 +235,24 @@
                 <div class="radio-button">
                   <input
                     type="radio"
-                    id="Project Support"
-                    name="Project Support"
+                    id="Support"
+                    name="selection"
                     value="Project Support"
                   />
                   <label for="Project Support">Project Support</label><br />
                 </div>
               </div>
-
+              <div id='selection' style="display: none; margin: 0px;">
+                <label for="course" style="font-weight: bold;">Choose a Course: </label>
+                <select name="course">
+                 <option value="web">Web Development</option> 
+                 <option value="cloud">Cloud Computing</option>
+                 <option value="java">Java</option>
+                 <option value="python">Python</option>
+                 <option value="ml">AI/ML</option>
+                 <option value="other">Other</option>
+                </select><br>
+              </div>
               <button type="submit" class="btn">Send</button>
             </form>
           </div>
@@ -743,5 +755,19 @@
     <!-- Email Js -->
     <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script type="text/javascript">
+      let course=document.getElementById('Courses')
+      course.onclick= function(){
+        document.getElementById('selection').style.display='block'
+      }
+      interview=document.getElementById("Interview")
+      interview.onclick=function(){
+        document.getElementById('selection').style.display='none'
+      }
+      support=document.getElementById("Support")
+      support.onclick=function(){
+        document.getElementById('selection').style.display='none'
+      }
+    </script>
   </body>
 </html>
